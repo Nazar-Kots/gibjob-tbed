@@ -18,7 +18,7 @@ spec:
       - name: vuejs-nginx
         image: amyress/front-end-docker-test:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 
 ---
 
@@ -31,7 +31,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 80
       protocol: TCP
   selector:
