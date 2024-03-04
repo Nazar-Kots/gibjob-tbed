@@ -1,9 +1,11 @@
 FROM node:lts-alpine AS builder
 WORKDIR /app
 
-COPY /src /app/src
-COPY package.json .
-COPY package-lock.json .
+COPY package*.json .
+COPY index.html .
+COPY vite.config.js .
+COPY src /app/src
+COPY public /app/public
 
 RUN npm install
 RUN npx vite build
